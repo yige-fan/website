@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Design - FANYIGE</title>
+  <link rel="stylesheet" href="sidebar.css">
+  <link rel="stylesheet" href="global.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+    }
+
+    .main-content {
+      margin-left: 300px;
+      padding: 2rem 3rem;
+      flex: 1;
+      box-sizing: border-box;
+    }
+
+    /* 瀑布流布局 */
+    .project-grid {
+      column-count: 3;
+      column-gap: 2rem;
+    }
+
+    .card {
+      display: inline-block;
+      width: 100%;
+      margin-bottom: 2rem;
+      break-inside: avoid;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-content {
+      padding: 1rem;
+    }
+
+    .card-title {
+      font-weight: bold;
+      font-size: 16px;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-description {
+      font-size: 14px;
+      color: #555;
+    }
+
+    /* 响应式列数调整 */
+    @media (max-width: 1000px) {
+      .project-grid {
+        column-count: 2;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .project-grid {
+        column-count: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div id="sidebar-placeholder"></div>
+
+  <script>
+  fetch("sidebar.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("sidebar-placeholder").innerHTML = data;
+
+      const path = window.location.pathname;
+
+      if (path.includes("index")) {
+        document.querySelector(".identity-links div:nth-child(1)").classList.add("active");
+      }
+      if (path.includes("design")) {
+        document.querySelector(".identity-links div:nth-child(2)").classList.add("active");
+      }
+      if (path.includes("sports")) {
+        document.querySelector(".identity-links div:nth-child(3)").classList.add("active");
+      }
+    });
+</script>
+
+  <!-- Main Content -->
+  <div class="main-content">
+
+    <div class="project-grid" id="design-projects"></div>
+    <script>
+      fetch("design-projects.html")
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById("design-projects").innerHTML = html;
+        });
+    </script>
+  </div>
+</body>
+</html>

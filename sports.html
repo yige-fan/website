@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sports - FANYIGE</title>
+  <link rel="stylesheet" href="sidebar.css">
+  <link rel="stylesheet" href="global.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+    }
+
+    .main-content {
+      margin-left: 300px;
+      padding: 2rem 3rem;
+      flex: 1;
+      box-sizing: border-box;
+      min-width: 0;
+      visibility: hidden; /* 初始隐藏，加载完成后显示 */
+    }
+
+    .horizontal-nav {
+      margin-bottom: 2rem;
+      display: flex;
+      gap: 1.5rem;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .horizontal-nav a {
+      text-decoration: none;
+      font-size: 15px;
+      color: #333;
+      padding-bottom: 5px;
+    }
+
+    .horizontal-nav a:hover,
+    .horizontal-nav a.active {
+      color: #007acc;
+      font-weight: bold;
+      border-bottom: 2px solid #007acc;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .subheading {
+      font-size: 15px;
+      color: #666;
+      margin-bottom: 1rem;
+    }
+
+    .photo-gallery {
+      display: flex;
+      overflow-x: auto;
+      gap: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    .photo-gallery img {
+      height: 180px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar 占位 -->
+  <div id="sidebar-placeholder"></div>
+
+  <!-- Main Content -->
+  <div class="main-content" id="main">
+    <div class="horizontal-nav">
+      <a href="#football">Football</a>
+      <a href="#bouldering">Bouldering</a>
+    </div>
+
+    <!-- Football Section -->
+<section id="football">
+  <h2>Football</h2>
+  <div class="subheading">SJTU Women's Varsity Football Team, Captain</div>
+  <p style="font-size: 14px; color: #444; margin: 0 0 1rem 0;">
+    • Third place in Women's Football Campus Group of Shanghai League, 2023<br>
+    • Golden Boot Award in the Women's Soccer of Shanghai League, 2023<br>
+    • Runner-up in Women's Football Campus Group of Shanghai League, 2022
+  </p>
+
+  <div class="photo-gallery">
+    <img src="sportsimages/23冬1.JPG" alt="Match 1">
+    <img src="sportsimages/23冬4.JPG" alt="Match 2">
+    <img src="sportsimages/23冬2.JPG" alt="Match 3">
+    <img src="sportsimages/22冬1.png" alt="Match 4">
+    <img src="sportsimages/21春1.png" alt="Match 5">
+  </div>
+</section>
+
+    <!-- Bouldering Section -->
+    <section id="bouldering">
+      <h2>Bouldering & Rope climbing</h2>
+      <div class="subheading">New attempts in 2025</div>
+      <div class="photo-gallery">
+        <img src="sportsimages/b1.jpg" alt="Climb 1">
+        <img src="sportsimages/b2.jpg" alt="Climb 2">
+      </div>
+    </section>
+  </div>
+
+  <!-- Load Sidebar + Reveal Content -->
+  <script>
+ fetch("sidebar.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("sidebar-placeholder").innerHTML = data;
+
+      const path = window.location.pathname;
+
+      if (path.includes("index")) {
+        document.querySelector(".identity-links div:nth-child(1)").classList.add("active");
+      }
+      if (path.includes("design")) {
+        document.querySelector(".identity-links div:nth-child(2)").classList.add("active");
+      }
+      if (path.includes("sports")) {
+        document.querySelector(".identity-links div:nth-child(3)").classList.add("active");
+      }
+    
+        // 显示主内容
+        document.getElementById("main").style.visibility = "visible";
+      });
+  </script>
+</body>
+</html>

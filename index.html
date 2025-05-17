@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FANYIGE</title>
+  <link rel="stylesheet" href="sidebar.css">
+  <link rel="stylesheet" href="global.css">
+</head>
+<body>
+  <div id="sidebar-placeholder"></div>
+  <script>
+  fetch("sidebar.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("sidebar-placeholder").innerHTML = data;
+
+      const path = window.location.pathname;
+
+      if (path.includes("index")) {
+        document.querySelector(".identity-links div:nth-child(1)").classList.add("active");
+      }
+      if (path.includes("design")) {
+        document.querySelector(".identity-links div:nth-child(2)").classList.add("active");
+      }
+      if (path.includes("sports")) {
+        document.querySelector(".identity-links div:nth-child(3)").classList.add("active");
+      }
+    });
+</script>
+
+  <div class="main-content">
+    
+
+    <div class="horizontal-nav">
+     <a href="#about">About</a>
+     <a href="#publications">Publications</a>
+     <a href="#projects">Projects</a>
+     <a href="#honours">Honours</a>
+    </div>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <p>Hi! I am in my first year as a PhD student, pursuing the Ph.D. degree in an interdisciplinary program at the School of Design, Shanghai Jiao Tong University. I previously received my M.S. in Industrial Design Engineering from SJTU and my B.S. in Mechanical Engineering from Hunan University.</p>
+      <p>I aim to leverage design-driven innovation to influence human attitudes, emotions, and behaviors, creating physical objects based on theoretical insights to shape tangible interactions, foster richer, more meaningful real-world interactions in daily life.</p>
+      <p>Currently, I focus on live streaming and social media as critical context, exploring to design a series of tangible interactive products to address the negative emotional and behavioral impacts of digital interactions, ultimately enhancing human well-being by reducing cognitive dissonance and attentional imbalance.</p>  
+  </section>
+
+    <section id="publications">
+      <h2>Selected Publications</h2>
+    <ul>
+      <li>Yixun Liu, Tongrui Yang, Xinao Shi, <strong>Yige Fan*</strong>, Jiao Xue. Mediating Roles of Trust and Interest in Influencing Consumer Purchase Decisions in Live Streaming E-commerce Scenarios. <em>IEEE IEEM 24</em>， 2024.</li>
+      <li>Tianyu Yu, <strong>Yige Fan</strong>, Zhixiang Zhang, Qingyu Hu, Weiye Xu, Haipeng Mi, Mueller Stephen. Thermaterial: Program Ambient Heat Transfer Behaviors on Objects through Fluidic Composites. <em>CHI EA '24</em>, 2024.</li>
+      <li>Jiao Xue, <strong>Yige Fan*</strong>, Dayi Lai, Jiatong Yue. User Perspective of Light Environment: Research on Parametric Design Strategy of Daylight Regulation. <em>ZHUANGSHI</em>, 2024.</li>
+      <li><strong>Yige Fan</strong>, Jiao Xue, Zheng Hao, Lai Dayi. Draw to shade: A personalized daylighting regulation method through user-involved paintings for enhanced indoor visual comfort and aesthetics experience. <em>Journal of Building Engineering</em>, 2023.</li>
+      <li><strong>Yige Fan</strong>, Wen Yuan, Fanqiang Kong, Jiao Xue. A Study of Library Window Seat Consumption and Learning Efficiency Based on the ABC Attitude Model and the Proposal of a Library Service Optimization Strategy. <em>Buildings</em>, 2022.</li>
+      <li>Jiao Xue, <strong>Yige Fan</strong>, Zhanxun Dong, Xiao Hu, Jiatong Yue, 2022. Improving Visual Comfort and Health through the Design of a Local Shading Device. <em>International Journal of Environmental Research and Public Health</em>， 2022.</li>  
+    </ul>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <h3>Physical Environment and Light Interaction</h3>
+      <p>This project is on the interaction between humans and their physical environments, particularly how natural light affects attitudes, emotions, and behaviors. In this area, I have developed AI-integrated, computationally driven programmable daylight regulation components through innovative participatory design processes, aiming to shape human-environment interactions while addressing aesthetic and comfort needs. </p>
+      <p>As an extension of my work on human-environment interaction, I also contributed to a project exploring the design of 3D-printed components with fluidic tunable thermal conductivity for applications such as ice therapy wearables and containers.</p>
+      <div id="index-projects1"></div>
+      <script>
+        fetch("index-projects1.html")
+          .then(res => res.text())
+          .then(html => {
+            document.getElementById("index-projects1").innerHTML = html;
+          });
+      </script>
+
+        <h3>Digital Environment and Social Interaction</h3>
+      <p>The project is on human interactions in digital environments, particularly in the context of live streaming. I aim to optimize social performance and interface design through data-driven methods, enhancing user experience and promoting consumer behavior.</p>
+      <p>This line of research is still ongoing</p>
+      <div id="index-projects2"></div>
+      <script>
+        fetch("index-projects2.html")
+          .then(res => res.text())
+          .then(html => {
+            document.getElementById("index-projects2").innerHTML = html;
+          });
+      </script>
+    </section>
+
+    <section id="honours">
+      <h2>Honours and Awards (2022–2024)</h2>
+      <ul>
+        <li><strong>Excellent Graduates in Shanghai, <em>Shanghai</em></strong> – <em>~5% out of graduates are awarded annually in SJTU</em></li>
+        <li><strong>National Scholarship, <em>China</em></strong> – <em>~0.2% students selected annually in China, funded by the Chinese government</em></li>
+        <li><strong>Pacemaker to Merit student, <em>SJTU</em></strong> – <em>~10 out of 40,000 students are awarded annually in SJTU</em></li>
+        <li><strong>National Outstanding Student Scholarship, <em>China</em></strong> – <em>~500 recipients selected annually in China, Merit-based</em></li>
+        <li><strong>Freshman Scholarship, <em>SJTU</em></strong> – <em>Award to graduate students who enter with the first place in their major</em></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>

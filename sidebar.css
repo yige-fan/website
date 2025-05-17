@@ -1,0 +1,82 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;         /* 右对齐所有内容 */
+  text-align: right;
+  width: 260px;
+  background-color: #71717130;
+  padding: 1rem 2rem;
+  height: 100vh;
+  position: fixed;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.spacer {
+  height: 2rem; /* 顶部留白 */
+}
+
+.sidebar img {
+  width: 200px;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  object-fit: cover;
+}
+
+.sidebar h1 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0.2rem 0 0;
+}
+
+.sidebar h2 {
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0.2rem 0 0rem;
+  color: #000000;
+}
+
+.sidebar p {
+  text-align: right;
+  font-size: 14px;
+  margin-bottom: 2rem;
+}
+
+/* 合并后的身份组（Academia / Designer / Athlete） */
+.identity-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px; /* 控制上下距离 */
+  margin-top: 0;
+}
+
+.identity-links div { /* 三个身份标签的字体调节 */
+  font-size: 18px;
+  font-weight: bold;  
+  cursor: pointer;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.identity-links div.active {
+  color: #007acc;
+}
+
+/* icon调节 */
+.contact-text-links {
+  font-size: 16px;
+  margin-top: 5rem;
+  color: #333;
+  text-align: right;
+}
+
+.contact-text-links a {
+  color: #007acc;
+  text-decoration: none;
+  margin: 0 4px;
+}
+
+.contact-text-links a:hover {
+  text-decoration: underline;
+}
